@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import logging
+import os
 from datetime import datetime
 from hashlib import sha256
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -10,6 +12,9 @@ from typing import Dict, List, Tuple
 from urllib.parse import urlparse
 
 from .models import Capsule, Rating, User
+
+
+logger = logging.getLogger(__name__)
 
 
 class AppHandler(BaseHTTPRequestHandler):
@@ -55,6 +60,14 @@ class AppHandler(BaseHTTPRequestHandler):
         except ValueError:
             return None
         return self.users.get(user_id)
+
+    # ------------------------------------------------------------------
+    # logging
+    # ------------------------------------------------------------------
+    def log_message(self, format: str, *args) -> None:  # noqa: D401, N802
+        """Redirect standard log messages to the module logger."""
+
+        logger.info("%s - - %s", self.address_string(), format % args)
 
     # ------------------------------------------------------------------
     # request handlers
@@ -265,13 +278,32 @@ def create_server(address: Tuple[str, int] = ("127.0.0.1", 0)) -> ThreadingHTTPS
 
 
 def run() -> None:
-    """Run a development server on port 8000."""
+    """Run a server using environment configuration.
 
-    server = create_server(("127.0.0.1", 8000))
+    ``HOST`` defines the bind address (defaults to ``0.0.0.0``) and ``PORT``
+    defines the port (defaults to ``8000``).  If ``LOG_FILE`` is set, all log
+    output is additionally written to that file.
+    """
+
+    host = os.getenv("HOST", "0.0.0.0")
+    port = int(os.getenv("PORT", "8000"))
+    log_file = os.getenv("LOG_FILE")
+
+    handlers = [logging.StreamHandler()]
+    if log_file:
+        handlers.append(logging.FileHandler(log_file))
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(message)s",
+        handlers=handlers,
+    )
+
+    server = create_server((host, port))
     try:
+        logger.info("Starting server on %s:%s", host, port)
         server.serve_forever()
     except KeyboardInterrupt:  # pragma: no cover - manual shutdown
-        pass
+        logger.info("Shutdown requested")
     finally:
         server.server_close()
 
