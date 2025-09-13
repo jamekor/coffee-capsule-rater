@@ -26,21 +26,21 @@
   - [ ] Unit tests for models and endpoints, integration tests for main flows.
 
 ## 3. Frontend Development
-- [ ] Layout & Navigation
-  - [ ] Header, footer, navigation links to capsules, add capsule, profile.
-- [ ] Authentication Views
-  - [ ] Sign-up, login, profile editing forms.
-- [ ] Capsule Views
-  - [ ] List view with search/filter.
-  - [ ] Detail view with rating history and add-rating form.
-  - [ ] Add capsule form.
-- [ ] Rating Component
-  - [ ] Form for rating submission (score + review text).
-  - [ ] Display average rating & user rating history.
-- [ ] Client-Side Validation & UX Enhancements
-  - [ ] Form error handling, loading indicators, mobile responsiveness.
-- [ ] Tests
-  - [ ] Component/unit tests, basic end-to-end tests for critical paths.
+- [x] Layout & Navigation
+  - [x] Header, footer, navigation links to capsules, add capsule, profile.
+- [x] Authentication Views
+  - [x] Sign-up, login, profile editing forms.
+- [x] Capsule Views
+  - [x] List view with search/filter.
+  - [x] Detail view with rating history and add-rating form.
+  - [x] Add capsule form.
+- [x] Rating Component
+  - [x] Form for rating submission (score + review text).
+  - [x] Display average rating & user rating history.
+- [x] Client-Side Validation & UX Enhancements
+  - [x] Form error handling, loading indicators, mobile responsiveness.
+- [x] Tests
+  - [x] Component/unit tests, basic end-to-end tests for critical paths.
 
 ## 4. Deployment & Monitoring
 - [ ] Deployment Environment
