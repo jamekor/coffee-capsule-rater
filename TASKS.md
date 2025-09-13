@@ -10,10 +10,10 @@
   - [x] Add automated testing & build pipeline (GitHub Actions, etc.).
 
 ## 2. Backend Development
-- [ ] Data Models
-  - [ ] `User` model with authentication fields.
-  - [ ] `Capsule` model: name, brand, roast level, flavor notes.
-  - [ ] `Rating` model: rating value, review text, timestamp, relation to User & Capsule.
+- [x] Data Models
+    - [x] `User` model with authentication fields.
+    - [x] `Capsule` model: name, brand, roast level, flavor notes.
+    - [x] `Rating` model: rating value, review text, timestamp, relation to User & Capsule.
 - [ ] User APIs
   - [ ] Register, login, edit profile endpoints.
 - [ ] Capsule APIs
