@@ -1,0 +1,4 @@
+# This project currently uses only the Python standard library.
+# The file is intentionally left blank for compatibility with
+# tools expecting a requirements file.
+
