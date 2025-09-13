@@ -2,6 +2,9 @@
 
 An app to rate coffee capsules.
 
+The static frontend is deployed via GitHub Pages; pushing updates to `main`
+will trigger a new build.
+
 ## Development
 
 The project uses only the Python standard library, so no additional
