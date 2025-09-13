@@ -3,11 +3,11 @@
 - [x] Draft PRD and task breakdown
 
 ## 1. Project Setup
-- [ ] Repository & Dev Environment
-  - [ ] Initialize project repo, install framework (e.g., Django + React or Flask + plain JS).
-  - [ ] Configure linting, formatting, and testing tools.
-- [ ] CI/CD Setup
-  - [ ] Add automated testing & build pipeline (GitHub Actions, etc.).
+- [x] Repository & Dev Environment
+  - [x] Initialize project repo, install framework (e.g., Django + React or Flask + plain JS).
+  - [x] Configure linting, formatting, and testing tools.
+- [x] CI/CD Setup
+  - [x] Add automated testing & build pipeline (GitHub Actions, etc.).
 
 ## 2. Backend Development
 - [ ] Data Models
@@ -55,4 +55,3 @@
   - [ ] Collect user feedback, track bugs/feature requests.
 - [ ] Iteration & Improvements
   - [ ] Prioritize backlog, implement improvements for public release.
-
