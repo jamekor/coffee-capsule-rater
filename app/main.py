@@ -85,7 +85,9 @@ class AppHandler(BaseHTTPRequestHandler):
                 self._send_json(self._capsule_dict(capsule))
                 return
             if len(parts) == 3 and parts[2] == "ratings":
-                ratings = [self._rating_dict(r) for r in self.ratings.get(capsule_id, [])]
+                ratings = [
+                    self._rating_dict(r) for r in self.ratings.get(capsule_id, [])
+                ]
                 self._send_json(ratings)
                 return
 
@@ -120,7 +122,9 @@ class AppHandler(BaseHTTPRequestHandler):
             except KeyError:
                 self.send_error(400, "Missing fields")
                 return
-            user = next((u for u in self.users.values() if u.username == username), None)
+            user = next(
+                (u for u in self.users.values() if u.username == username), None
+            )
             if not user:
                 self.send_error(401)
                 return
@@ -128,7 +132,14 @@ class AppHandler(BaseHTTPRequestHandler):
             if hashed != user.password:
                 self.send_error(401)
                 return
-            self._send_json({"token": user.id, "id": user.id, "username": user.username, "email": user.email})
+            self._send_json(
+                {
+                    "token": user.id,
+                    "id": user.id,
+                    "username": user.username,
+                    "email": user.email,
+                }
+            )
             return
 
         if parts == ["capsules"]:
@@ -147,7 +158,9 @@ class AppHandler(BaseHTTPRequestHandler):
                 return
             cid = self.next_capsule_id
             self.next_capsule_id += 1
-            capsule = Capsule(name=name, brand=brand, roast_level=roast, flavor_notes=flavor, id=cid)
+            capsule = Capsule(
+                name=name, brand=brand, roast_level=roast, flavor_notes=flavor, id=cid
+            )
             self.capsules[cid] = capsule
             self._send_json(self._capsule_dict(capsule), 201)
             return
@@ -176,7 +189,13 @@ class AppHandler(BaseHTTPRequestHandler):
                 self.send_error(400, "Invalid rating")
                 return
             review = str(data.get("review", ""))
-            rating = Rating(user=user, capsule=capsule, value=value, review=review, timestamp=datetime.utcnow())
+            rating = Rating(
+                user=user,
+                capsule=capsule,
+                value=value,
+                review=review,
+                timestamp=datetime.utcnow(),
+            )
             self.ratings.setdefault(capsule_id, []).append(rating)
             self._send_json(self._rating_dict(rating), 201)
             return
@@ -207,7 +226,9 @@ class AppHandler(BaseHTTPRequestHandler):
                 user.username = str(username)
             if email:
                 user.email = str(email)
-            self._send_json({"id": user.id, "username": user.username, "email": user.email})
+            self._send_json(
+                {"id": user.id, "username": user.username, "email": user.email}
+            )
             return
 
         self.send_error(404)
@@ -257,4 +278,3 @@ def run() -> None:
 
 if __name__ == "__main__":  # pragma: no cover - manual execution
     run()
-

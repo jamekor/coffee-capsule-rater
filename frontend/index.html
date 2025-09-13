@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Coffee Capsule Rater</title>
+  <style>
+    body { font-family: sans-serif; margin:0; padding:0; }
+    header, footer { background:#eee; padding:1em; }
+    nav a { margin-right:1em; }
+    main { padding:1em; }
+    .view { display:block; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Coffee Capsule Rater</h1>
+    <nav>
+      <a href="#capsules" id="nav-capsules">Capsules</a>
+      <a href="#add-capsule" id="nav-add">Add Capsule</a>
+      <a href="#profile" id="nav-profile">Profile</a>
+      <a href="#login" id="nav-login">Login</a>
+      <a href="#signup" id="nav-signup">Sign Up</a>
+    </nav>
+  </header>
+  <main>
+    <section id="capsules-section" class="view">
+      <h2>Capsules</h2>
+      <input type="search" id="capsule-search" placeholder="Search capsules" />
+      <ul id="capsule-list"></ul>
+    </section>
+    <section id="add-capsule-section" class="view" hidden>
+      <h2>Add Capsule</h2>
+      <form id="add-capsule-form">
+        <input required name="name" placeholder="Name" />
+        <input required name="brand" placeholder="Brand" />
+        <input required name="roast_level" placeholder="Roast Level" />
+        <input name="flavor_notes" placeholder="Flavor Notes" />
+        <button type="submit">Add</button>
+      </form>
+    </section>
+    <section id="login-section" class="view" hidden>
+      <h2>Login</h2>
+      <form id="login-form">
+        <input required name="username" placeholder="Username" />
+        <input required type="password" name="password" placeholder="Password" />
+        <button type="submit">Login</button>
+      </form>
+    </section>
+    <section id="signup-section" class="view" hidden>
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <input required name="username" placeholder="Username" />
+        <input required name="email" placeholder="Email" />
+        <input required type="password" name="password" placeholder="Password" />
+        <button type="submit">Sign Up</button>
+      </form>
+    </section>
+    <section id="profile-section" class="view" hidden>
+      <h2>Profile</h2>
+      <form id="profile-form">
+        <input name="username" placeholder="Username" />
+        <input name="email" placeholder="Email" />
+        <button type="submit">Update</button>
+      </form>
+    </section>
+    <section id="capsule-detail-section" class="view" hidden>
+      <h2 id="capsule-detail-name"></h2>
+      <p id="capsule-detail-brand"></p>
+      <p id="capsule-detail-roast"></p>
+      <p id="capsule-detail-flavor"></p>
+      <p>Average Rating: <span id="capsule-detail-average"></span></p>
+      <ul id="capsule-ratings"></ul>
+      <form id="rating-form">
+        <input required type="number" min="1" max="5" name="value" placeholder="Rating (1-5)" />
+        <input name="review" placeholder="Review" />
+        <button type="submit">Submit Rating</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; Coffee Capsule Rater</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

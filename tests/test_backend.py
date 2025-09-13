@@ -11,7 +11,9 @@ sys.path.append(str(Path(__file__).resolve().parents[1]))
 from app.main import create_server
 
 
-def _request(method: str, url: str, data: dict | None = None, headers: dict | None = None):
+def _request(
+    method: str, url: str, data: dict | None = None, headers: dict | None = None
+):
     if data is not None:
         body = json.dumps(data).encode()
         headers = {"Content-Type": "application/json", **(headers or {})}
@@ -98,4 +100,3 @@ def test_full_backend_flow() -> None:
     finally:
         server.shutdown()
         thread.join()
-
