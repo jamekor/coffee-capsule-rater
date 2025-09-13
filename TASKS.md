@@ -43,12 +43,12 @@
   - [x] Component/unit tests, basic end-to-end tests for critical paths.
 
 ## 4. Deployment & Monitoring
-- [ ] Deployment Environment
-  - [ ] Set up staging and production environments (e.g., Heroku, Vercel).
-- [ ] Logging & Monitoring
-  - [ ] Basic logging for error tracking (e.g., Sentry, CloudWatch).
-- [ ] Documentation
-  - [ ] README, API docs, user instructions.
+- [x] Deployment Environment
+  - [x] Set up staging and production environments (e.g., Heroku, Vercel).
+- [x] Logging & Monitoring
+  - [x] Basic logging for error tracking (e.g., Sentry, CloudWatch).
+- [x] Documentation
+  - [x] README, API docs, user instructions.
 
 ## 5. Project Management & Iteration
 - [ ] Beta Testing
