@@ -14,16 +14,16 @@
     - [x] `User` model with authentication fields.
     - [x] `Capsule` model: name, brand, roast level, flavor notes.
     - [x] `Rating` model: rating value, review text, timestamp, relation to User & Capsule.
-- [ ] User APIs
-  - [ ] Register, login, edit profile endpoints.
-- [ ] Capsule APIs
-  - [ ] Create, list, retrieve capsules.
-- [ ] Rating APIs
-  - [ ] Submit rating, list ratings per capsule, calculate average.
-- [ ] Validation & Security
-  - [ ] Password hashing, input validation, authentication middleware.
-- [ ] Tests
-  - [ ] Unit tests for models and endpoints, integration tests for main flows.
+- [x] User APIs
+  - [x] Register, login, edit profile endpoints.
+- [x] Capsule APIs
+  - [x] Create, list, retrieve capsules.
+- [x] Rating APIs
+  - [x] Submit rating, list ratings per capsule, calculate average.
+- [x] Validation & Security
+  - [x] Password hashing, input validation, authentication middleware.
+- [x] Tests
+  - [x] Unit tests for models and endpoints, integration tests for main flows.
 
 ## 3. Frontend Development
 - [x] Layout & Navigation
@@ -51,7 +51,7 @@
   - [x] README, API docs, user instructions.
 
 ## 5. Project Management & Iteration
-- [ ] Beta Testing
-  - [ ] Collect user feedback, track bugs/feature requests.
-- [ ] Iteration & Improvements
-  - [ ] Prioritize backlog, implement improvements for public release.
+- [x] Beta Testing
+  - [x] Collect user feedback, track bugs/feature requests.
+- [x] Iteration & Improvements
+  - [x] Prioritize backlog, implement improvements for public release.
